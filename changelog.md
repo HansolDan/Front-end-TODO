@@ -73,6 +73,12 @@ Date format: YYYY-MM-DD
 - Created a tasks.xml document to hold the same kind of data as our existing CSV file  
 - Created initial XML_Model.php with load() function to populate record objects from tasks.xml  
 
-
 ## 2017-11-17
 - Replace the store() logic in your model with code to rebuild the collection as a SimpleXMLElement, and save it
+
+## 2017-12-01
+- Removed xml file containing todo items in data folder  
+- Added package restful and third_party to autoload  
+- Added server configuration settings to model Tasks.php  
+- Curl, format, rest added to autoload  
+- Added store method
