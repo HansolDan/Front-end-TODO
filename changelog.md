@@ -83,3 +83,4 @@ Date format: YYYY-MM-DD
 - Curl, format, rest added to autoload  
 - Added store method
 - Added get method  
+- Added delete method  
