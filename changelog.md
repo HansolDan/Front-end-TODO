@@ -82,3 +82,4 @@ Date format: YYYY-MM-DD
 - Added server configuration settings to model Tasks.php  
 - Curl, format, rest added to autoload  
 - Added store method
+- Added get method  
