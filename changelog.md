@@ -84,4 +84,5 @@ Date format: YYYY-MM-DD
 - Added store method
 - Added get method  
 - Added delete method  
-- Added update method
+- Added update method  
+- Added add method  
