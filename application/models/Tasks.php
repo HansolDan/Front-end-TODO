@@ -72,6 +72,14 @@ class Tasks extends XML_Model {
 	{
 
 	}
+
+	// Retrieve an existing DB record as an object
+	function get($key, $key2 = null)
+	{
+		$this->rest->initialize(array('server' => REST_SERVER));
+		$this->rest->option(CURLOPT_PORT, REST_PORT);
+		return $this->rest->get('/job/' . $key);
+	}
 }
 
 // return -1, 0, or 1 of $a's category name is earlier, equal to, or later than $b's
