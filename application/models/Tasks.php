@@ -1,4 +1,9 @@
 <?php
+/**
+ * Modified to use REST client to get port data from our server.
+ */
+define('REST_SERVER', 'http://backend.local');  // the REST server host
+define('REST_PORT', $_SERVER['SERVER_PORT']);   // the port you are running the server on
 
 /**
  * Task Model specifying /data/tasks.csv as the table and id as the primary key
