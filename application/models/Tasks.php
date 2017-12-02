@@ -8,7 +8,7 @@ define('REST_PORT', $_SERVER['SERVER_PORT']);   // the port you are running the 
 /**
  * Task Model specifying /data/tasks.csv as the table and id as the primary key
  */
-class Tasks extends XML_Model {
+class Tasks extends CSV_Model {
 
 	public function __construct()
 	{
@@ -54,19 +54,17 @@ class Tasks extends XML_Model {
 		return $config;
 	}
 
-//	public function load()
-//	{
-//		// load our data from the REST backend
-//		$this->rest->initialize(array('server' => REST_SERVER));
-//		$this->rest->option(CURLOPT_PORT, REST_PORT);
-//		$this->_data =  $this->rest->get('/job');
-//
-//		// rebuild the field names from the first object
-//		$one = aray_values((array) $this->_data);
-//		$this->_fields = array_keys((array)$one);
-//		// $one = aray_values((array) $this->_data);
-//		// $this->_fields = array_keys((array)$one[0]);
-//	}
+	public function load()
+	{
+		// load our data from the REST backend
+		$this->rest->initialize(array('server' => REST_SERVER));
+		$this->rest->option(CURLOPT_PORT, REST_PORT);
+		$this->_data =  $this->rest->get('job');
+
+		// rebuild the field names from the first object
+		$one = array_values((array) $this->_data);
+		$this->_fields = array_keys((array)$one[0]);
+	}
 
 	protected function store()
 	{
@@ -78,7 +76,7 @@ class Tasks extends XML_Model {
 	{
 		$this->rest->initialize(array('server' => REST_SERVER));
 		$this->rest->option(CURLOPT_PORT, REST_PORT);
-		return $this->rest->get('/job/' . $key);
+		return $this->rest->get('job/' . $key);
 	}
 
 	// Delete a record from the DB
