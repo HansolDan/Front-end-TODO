@@ -86,3 +86,5 @@ Date format: YYYY-MM-DD
 - Added delete method  
 - Added update method  
 - Added add method  
+- Added load method  
+- Fixed previous crud methods  
